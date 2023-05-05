@@ -1,0 +1,72 @@
+.chat-container {
+  height: 80%;
+}
+.chat-image {
+  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 30%;
+  overflow: hidden;
+}
+.chat-image image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chat-message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.chat-message.send {
+  align-self: flex-end;
+  background-color: #0084ff;
+}
+.chat-message.receive {
+  justify-content: flex-start;
+  background-color: #0084ff;
+}
+.chat-text {
+  max-width: 80%;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+/*
+一下信息为底部信息
+*/
+.chat-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+.input {
+  flex: 1;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.chat-send-button {
+  flex: none;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}

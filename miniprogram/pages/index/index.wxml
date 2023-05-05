@@ -1,0 +1,32 @@
+<view class="chat-container">
+  <scroll-view class="chat-content" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
+    <view wx:for="{{chatRecords}}" wx:key="{{index}}" class="chat-record" data-id="{{item.id}}">
+      <!--判断如果为send用户输入，则显示在右侧
+    如果为机器人回复显示在左侧，并设置不同的背景颜色
+       -->
+      <view wx:if="{{item.type==='send'}}" class="chat-message">
+        <view class="chat-text">
+          <view  class="text">{{item.message}}</view>
+        </view>
+          <view class="chat-image">
+            <open-data type="userAvatarUrl"></open-data>
+      </view>
+      </view>
+      <!--判断分隔符-->
+      <view wx:else class="chat-message">
+          <view class="chat-image">
+            <image  src="images/chatgpt.jpeg"></image>
+          </view>
+          <view class="chat-text">
+          <view  class="text">{{item.message}}</view>
+        </view>
+      </view>
+      
+    </view>
+  </scroll-view>
+</view>
+<!--为底部信息 不用修改-->
+<view class="chat-input">
+  <input class="input" auto-focus placeholder="请输入问题" bindinput="onQuestionInput" value="{{inputValue}}"></input>
+  <button class="chat-send-button" size="mini" bindtap="onQuestionSubmit">发送</button>
+</view>
